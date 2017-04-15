@@ -1,0 +1,10 @@
+Steps to use this code.
+
+Prerequisites: Node.js and mongodb installed
+
+cd BookStore
+git clone https://github.com/csd713/BookStore.git
+npm install
+mongod
+node app.js
+browse to localhost:3000
