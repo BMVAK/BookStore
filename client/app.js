@@ -6,19 +6,19 @@ myApp.config(function($routeProvider){
 		controller: 'BooksController',
 		templateUrl: 'views/books.html'
 	})
-	.when('/books', {
+	.when('/book', {
 		controller: 'BooksController',
 		templateUrl: 'views/books.html'
 	})
-	.when('/books/details/:id', {
+	.when('/book/details/:id', {
 		controller: 'BooksController',
 		templateUrl: 'views/book_details.html'
 	})
-	.when('/books/add', {
+	.when('/book/add', {
 		controller: 'BooksController',
 		templateUrl: 'views/add_book.html'
 	})
-	.when('/books/edit/:id', {
+	.when('/book/edit/:id', {
 		controller: 'BooksController',
 		templateUrl: 'views/edit_book.html'
 	})

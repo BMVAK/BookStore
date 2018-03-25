@@ -22,8 +22,7 @@ var bookSchema = mongoose.Schema({
      type: String
    },
    pages:{
-     type: String,
-     required: true
+     type: String
    },
    img_url:{
      type: String

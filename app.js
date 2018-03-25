@@ -14,13 +14,13 @@ mongoose.connect('mongodb://localhost/bookstore');
 var db = mongoose.connection;
 
 app.get('/',function(req, res){
-        res.send('Please Use the API /api/books or /api/genres');
+        res.send('Please Use the API /api/book or /api/genre');
 });
 
 //////////////////// GENRE API ////////////////////////
 
 //To get all the genres from database
-app.get('/api/genres', function(req, res){
+app.get('/api/genre', function(req, res){
 Genre.getGenres(function(err, genres){
   if(err){
     throw err;
@@ -30,7 +30,7 @@ Genre.getGenres(function(err, genres){
 });
 
 //To get a genre details using it's id
-app.get('/api/genres/:_id', function(req, res){
+app.get('/api/genre/:_id', function(req, res){
 Genre.getGenreById(req.params._id, function(err, genre){
   if(err){
     throw err;
@@ -40,7 +40,7 @@ Genre.getGenreById(req.params._id, function(err, genre){
 });
 
 //To add a new Genre to the database
-app.post('/api/genres', function(req, res){
+app.post('/api/genre', function(req, res){
 var genre = req.body;
 Genre.addGenre(genre, function(err, genre){
   if(err){
@@ -51,7 +51,7 @@ Genre.addGenre(genre, function(err, genre){
 });
 
 //To update a genre details by its id
-app.put('/api/genres/:_id', function(req, res){
+app.put('/api/genre/:_id', function(req, res){
 var id = req.params._id;
 var genre = req.body;
 Genre.updateGenre(id, genre, {}, function(err, genre){
@@ -63,7 +63,7 @@ Genre.updateGenre(id, genre, {}, function(err, genre){
 });
 
 //To delete a genre using its id
-app.delete('/api/genres/:_id', function(req, res){
+app.delete('/api/genre/:_id', function(req, res){
 var id = req.params._id;
 Genre.deleteGenre(id, function(err, genre){
   if(err){
@@ -77,7 +77,7 @@ Genre.deleteGenre(id, function(err, genre){
 //////////////////// BOOK API ////////////////////////
 
 // To get all the books from the database
-app.get('/api/books', function(req, res){
+app.get('/api/book', function(req, res){
 Book.getBooks(function(err, books){
   if(err){
     throw err;
@@ -87,7 +87,7 @@ Book.getBooks(function(err, books){
 });
 
 //To get a book details using it's id
-app.get('/api/books/:_id', function(req, res){
+app.get('/api/book/:_id', function(req, res){
 Book.getBookById(req.params._id, function(err, book){
   if(err){
     throw err;
@@ -97,7 +97,7 @@ Book.getBookById(req.params._id, function(err, book){
 });
 
 //To add a new book to the database
-app.post('/api/books', function(req, res){
+app.post('/api/book', function(req, res){
 var book = req.body;
 Book.addBook(book, function(err, book){
   if(err){
@@ -108,7 +108,7 @@ Book.addBook(book, function(err, book){
 });
 
 //To update a book details by its id
-app.put('/api/books/:_id', function(req, res){
+app.put('/api/book/:_id', function(req, res){
 var id = req.params._id;
 var book = req.body;
 Book.updateBook(id, book, {}, function(err, book){
@@ -120,7 +120,7 @@ Book.updateBook(id, book, {}, function(err, book){
 });
 
 //To delete a book using its id
-app.delete('/api/books/:_id', function(req, res){
+app.delete('/api/book/:_id', function(req, res){
 var id = req.params._id;
 Book.deleteBook(id, function(err, book){
   if(err){
@@ -131,4 +131,5 @@ Book.deleteBook(id, function(err, book){
 });
 
 app.listen(3000);
-console.log('Running on port 3000..');
+console.log('Started BookStore application on port 3000');
+console.log('Open http://localhost:3000 on your browser!');

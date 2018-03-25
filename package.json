@@ -6,11 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-    "dependencies":{
-        "express":"*",
-        "body-parser":"*",
-        "mongoose":"*"
-    },
+  "dependencies": {
+    "express": "*",
+    "body-parser": "*",
+    "mongoose": "*"
+  },
   "author": "Chiranjeevi S D",
   "license": "ISC"
 }
