@@ -21,4 +21,11 @@ myApp.controller('BooksController', ['$scope', '$http', '$location', '$routePara
     });
   }
 
+  $scope.updateBook = function() {
+    var id = $routeParams.id;
+    $http.put('/api/book/' + id, $scope.book).success(function(response) {
+      window.location.href = '#/book';
+    });
+  }
+
 }]);
