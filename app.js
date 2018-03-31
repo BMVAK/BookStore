@@ -9,6 +9,7 @@ dotenv.load();
 
 //BOOKSTORE_MLAB_URL - MongoDb url from Mlab
 const MONGODB_URL= process.env.BOOKSTORE_MLAB_URL || 'mongodb://localhost/bookstore';
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 //location for static content
@@ -139,6 +140,6 @@ app.delete('/api/book/:_id', function(req, res) {
   });
 });
 
-app.listen(3000);
-console.log('Started BookStore application on port 3000');
-console.log('Open http://localhost:3000 on your browser!');
+app.listen(PORT);
+console.log('Started BookStore application on port ' + PORT);
+console.log('Open http://localhost:'+ PORT +' on your browser!');
