@@ -8,4 +8,10 @@ myApp.controller('GenresController', ['$scope', '$http', '$location', '$routePar
     });
   }
 
+  $scope.addGenre = function() {
+    $http.post('/api/genre/', $scope.genre).success(function(response) {
+      window.location.href = '#/genre';
+    });
+  }
+
 }]);
