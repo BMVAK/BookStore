@@ -28,4 +28,10 @@ myApp.controller('GenresController', ['$scope', '$http', '$location', '$routePar
     });
   }
 
+  $scope.deleteGenre = function(id) {
+    $http.delete('/api/genre/' + id).success(function(response) {
+      window.location.href = '#/genre';
+    });
+  }
+
 }]);

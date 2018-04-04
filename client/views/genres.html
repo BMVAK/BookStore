@@ -7,6 +7,7 @@
   <ul class="list-group">
     <div ng-repeat="genre in genres">
       <li class="list-group-item">{{genre.name}}
+        <a class="btn btn-danger pull-right" href="#/genre" ng-click="deleteGenre(genre._id)">Delete</a>
         <a class="btn btn-primary pull-right" href="#/genre/edit/{{genre._id}}">Edit</a>
       </li>
     </div>
