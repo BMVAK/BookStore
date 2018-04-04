@@ -6,7 +6,9 @@
   </div>
   <ul class="list-group">
     <div ng-repeat="genre in genres">
-      <li class="list-group-item">{{genre.name}}</li>
+      <li class="list-group-item">{{genre.name}}
+        <a class="btn btn-primary pull-right" href="#/genre/edit/{{genre._id}}">Edit</a>
+      </li>
     </div>
   </ul>
 </div>
