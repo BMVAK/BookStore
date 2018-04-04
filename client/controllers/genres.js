@@ -8,8 +8,28 @@ myApp.controller('GenresController', ['$scope', '$http', '$location', '$routePar
     });
   }
 
+  $scope.getGenre = function() {
+    var id = $routeParams.id;
+    $http.get('/api/genre/' + id).success(function(response) {
+      $scope.genre = response;
+    });
+  }
+
   $scope.addGenre = function() {
     $http.post('/api/genre/', $scope.genre).success(function(response) {
+      window.location.href = '#/genre';
+    });
+  }
+
+  $scope.updateGenre = function() {
+    var id = $routeParams.id;
+    $http.put('/api/genre/' + id, $scope.genre).success(function(response) {
+      window.location.href = '#/genre';
+    });
+  }
+
+  $scope.deleteGenre = function(id) {
+    $http.delete('/api/genre/' + id).success(function(response) {
       window.location.href = '#/genre';
     });
   }

@@ -30,6 +30,10 @@ myApp.config(function($routeProvider) {
       controller: 'GenresController',
       templateUrl: 'views/add_genre.html'
     })
+    .when('/genre/edit/:id', {
+      controller: 'GenresController',
+      templateUrl: 'views/edit_genre.html'
+    })
     .otherwise({
       redirectTo: '/'
     });
