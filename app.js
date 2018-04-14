@@ -1,8 +1,8 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var dotenv = require('dotenv');
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 const bookRoute = require('./routes/books-route');
 const genreRoute = require('./routes/genres-route');
 
@@ -19,8 +19,6 @@ app.use(express.static(__dirname + '/client'));
 
 //Use Mlab url here
 mongoose.connect(MONGODB_URL);
-
-var db = mongoose.connection;
 
 app.get('/', function (req, res) {
 	res.send('Please Use the API /api/book or /api/genre');
