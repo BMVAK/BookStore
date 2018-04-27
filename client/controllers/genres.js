@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp');
+myApp = angular.module('myApp');
 
 myApp.controller('GenresController', ['$scope', '$http', '$location', '$routeParams', function ($scope, $http, $location, $routeParams) {
 
