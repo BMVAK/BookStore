@@ -1,4 +1,4 @@
-const myApp = angular.module('myApp');
+var myApp = angular.module('myApp');
 
 myApp.controller('BooksController', ['$scope', '$http', '$location', '$routeParams', function ($scope, $http, $location, $routeParams) {
 
@@ -16,20 +16,20 @@ myApp.controller('BooksController', ['$scope', '$http', '$location', '$routePara
 	}
 
 	$scope.addBook = function () {
-		$http.post('/api/book/', $scope.book).success(function (response) {
+		$http.post('/api/book/', $scope.book).success(function () {
 			window.location.href = '#/book';
 		});
 	}
 
 	$scope.updateBook = function () {
 		var id = $routeParams.id;
-		$http.put('/api/book/' + id, $scope.book).success(function (response) {
+		$http.put('/api/book/' + id, $scope.book).success(function () {
 			window.location.href = '#/book';
 		});
 	}
 
 	$scope.deleteBook = function (id) {
-		$http.delete('/api/book/' + id).success(function (response) {
+		$http.delete('/api/book/' + id).success(function () {
 			window.location.href = '#/book';
 		});
 	}
