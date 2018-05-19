@@ -5,14 +5,18 @@
 	<div class="panel-body">
 		<div class="row">
 			<div ng-repeat="book in books">
-				<div class class="col-md-6">
-					<div class="col-md-6">
-						<h4>{{book.title}}</h4>
-						<p>{{book.description}}</p>
-						<a class="btn btn-primary" href="#/book/details/{{book._id}}">View Details</a>
-					</div>
-					<div class="col-md-6">
-						<img class="img img-thumbnail" ng-src="{{book.img_url}}">
+				<div class class="col-md-4">
+					<div class class="col-md-4">
+						<div class="col-md-4">
+							<div class="card">
+								<img class="card-img-top" ng-src="{{book.img_url}}" alt="Book image">
+								<div class="card-body">
+									<h4 class="card-title">{{book.title}}</h4>
+									<p class="card-text">{{book.description}}</p>
+									<a class="btn btn-primary" href="#/book/details/{{book._id}}">View Details</a>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
